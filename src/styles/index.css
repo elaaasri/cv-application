@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* root styles */
+#root {
+  display: flex;
+  justify-content: space-around;
+  min-height: 100vh;
+  color: white;
+  background-color: rgb(3, 5, 14);
+}
+/* form container styles */
+.form-container {
+  border: solid red 2px;
+  max-width: 400px;
+  height: auto;
+  width: 100%;
+}
+/* general section styles */
+#generalInformationForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* display Container  */
+#displayContainer {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border: 1px solid red;
+}
