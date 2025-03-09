@@ -19,7 +19,7 @@
   width: 100%;
 }
 /* general section styles */
-#generalInformationForm {
+#generalInfosForm {
   display: flex;
   flex-direction: column;
   justify-content: center;

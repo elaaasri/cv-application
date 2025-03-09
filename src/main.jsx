@@ -2,13 +2,13 @@ import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles/index.css";
 import DisplayContainer from "./components/DisplayContainer";
-import GeneralInformation from "./components/FormContainer";
+import GeneralInfos from "./components/FormContainer";
 
 const App = () => {
-  const [data, setData] = useState("");
+  const [data, sendData] = useState("");
   return (
     <>
-      <GeneralInformation setData={setData} />
+      <GeneralInfos sendData={sendData} />
       <DisplayContainer data={data} />
     </>
   );
@@ -20,7 +20,7 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>
 );
 
-// CV app:
+// CV app :
 // 1- sections:
 //  ==> general information (name, email, phone num)
 //  ==> educational experience (school name, title of study and date of study)
