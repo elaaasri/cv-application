@@ -1,43 +1,41 @@
-// import { useState } from "react";
 import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 
 // get general infos from input fields :
-const GeneralInfos = ({
+const EducationalExperience = ({
   handleChange,
   handleSubmitting,
   handleEditting,
-  isGeneralFormVisible,
+  isEducationalFormVisible,
 }) => {
   return (
     <>
       <form
-        id="generalInfosForm"
-        style={{ display: isGeneralFormVisible ? "flex" : "none" }}
+        id="educationalExpForm"
+        style={{ display: isEducationalFormVisible ? "flex" : "none" }}
       >
         <CustomInput
           type="text"
-          id="fullName"
-          name="Name"
+          id="schoolName"
+          name="School Name"
           onChange={handleChange}
         />
         <CustomInput
-          type="email"
-          id="email"
-          name="Email"
-          value="zbe"
+          type="text"
+          id="TitleOfStudy"
+          name="Title of Study"
           onChange={handleChange}
         />
         <CustomInput
-          type="number"
-          id="phoneNumber"
-          name="Phone Number"
+          type="date"
+          id="dateOfStudy"
+          name="Date of Study"
           onChange={handleChange}
         />
         <CustomButton
           type="submit"
           name="Submit"
-          id="generalInfosSubmitButton"
+          id="educationExpSubmitButton"
           onClick={handleSubmitting}
         />
       </form>
@@ -45,7 +43,7 @@ const GeneralInfos = ({
     </>
   );
 };
-export default GeneralInfos;
+export default EducationalExperience;
 /**
  * hide the form
  * add previous infos as a values
