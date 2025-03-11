@@ -1,16 +1,8 @@
+// display content :
 const DisplayContainer = ({ generalData, educationalExpData }) => {
-  console.log("Genera lData", generalData);
   const { fullName, email, phoneNumber } = generalData;
   const { schoolName, TitleOfStudy, dateOfStudy } = educationalExpData;
 
-  // const {
-  //   fullName,
-  //   email,
-  //   phoneNumber,
-  //   schoolName,
-  //   TitleOfStudy,
-  //   dateOfStudy,
-  // } = allData;
   return (
     <div id="displayContainer">
       <h1>CV</h1>
