@@ -1,7 +1,17 @@
 // display content :
-const DisplayContainer = ({ generalData, educationalExpData }) => {
+const DisplayContainer = ({
+  generalData,
+  educationalExpData,
+  practicalExpData,
+}) => {
   const { fullName, email, phoneNumber } = generalData;
   const { schoolName, TitleOfStudy, dateOfStudy } = educationalExpData;
+  const {
+    companyName,
+    positionTitle,
+    mainResponsibilities,
+    workExperienceTimeline,
+  } = practicalExpData;
 
   return (
     <div id="displayContainer">
@@ -13,6 +23,11 @@ const DisplayContainer = ({ generalData, educationalExpData }) => {
       <h2>{schoolName}</h2>
       <h2>{TitleOfStudy}</h2>
       <h2>{dateOfStudy}</h2>
+      <hr />
+      <h2>{companyName}</h2>
+      <h2>{positionTitle}</h2>
+      <h2>{mainResponsibilities}</h2>
+      <h2>{workExperienceTimeline}</h2>
     </div>
   );
 };

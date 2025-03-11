@@ -2,15 +2,18 @@ import { useState } from "react";
 import DisplayContainer from "./DisplayContainer";
 import GeneralInfos from "./GeneralInfos";
 import EducationalExperience from "./EducationalExperience";
+import PracticalExperience from "./PracticalExperience";
 
 // app func to manipulate the dom :
 const App = () => {
   const [formData, setFormData] = useState({});
   const [generalData, setGeneralData] = useState({});
   const [educationalExpData, setEducationalExpData] = useState({});
+  const [practicalExpData, setPracticalExpData] = useState({});
   const [isGeneralFormVisible, setGeneralFormVisiblity] = useState(true);
   const [isEducationalFormVisible, setEducationalFormVisiblity] =
     useState(true);
+  const [isPracticalFormVisible, setPracticallFormVisiblity] = useState(true);
 
   // handle change state :
   const handleChange = (e) => {
@@ -29,6 +32,12 @@ const App = () => {
     setEducationalExpData(formData);
     setEducationalFormVisiblity(false);
   };
+  const handlePracticalExpSubmitting = (e) => {
+    e.preventDefault();
+    setPracticalExpData(formData);
+    setPracticallFormVisiblity(false);
+  };
+
   // handle editting :
   const handleGeneralInfoEditting = (e) => {
     e.preventDefault();
@@ -37,6 +46,10 @@ const App = () => {
   const handleEducationalExpEditting = (e) => {
     e.preventDefault();
     setEducationalFormVisiblity(true);
+  };
+  const handlePracticalExpEditting = (e) => {
+    e.preventDefault();
+    setPracticallFormVisiblity(true);
   };
 
   return (
@@ -54,10 +67,17 @@ const App = () => {
           handleEditting={handleEducationalExpEditting}
           isFormVisible={isEducationalFormVisible}
         />
+        <PracticalExperience
+          handleChange={handleChange}
+          handleSubmitting={handlePracticalExpSubmitting}
+          handleEditting={handlePracticalExpEditting}
+          isFormVisible={isPracticalFormVisible}
+        />
       </div>
       <DisplayContainer
         generalData={generalData}
         educationalExpData={educationalExpData}
+        practicalExpData={practicalExpData}
       />
     </>
   );

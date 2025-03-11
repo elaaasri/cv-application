@@ -1,7 +1,7 @@
 import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
-// get educational experience infos from input fields :
-const EducationalExperience = ({
+// get practical experience infos from input fields :
+const PracticalExperience = ({
   handleChange,
   handleSubmitting,
   handleEditting,
@@ -10,31 +10,37 @@ const EducationalExperience = ({
   return (
     <>
       <form
-        id="educationalExpForm"
+        id="practicalExpForm"
         style={{ display: isFormVisible ? "flex" : "none" }}
       >
         <CustomInput
           type="text"
-          id="schoolName"
-          name="School Name"
+          id="companyName"
+          name="Company Name"
           onChange={handleChange}
         />
         <CustomInput
           type="text"
-          id="TitleOfStudy"
-          name="Title of Study"
+          id="positionTitle"
+          name="Position Title"
           onChange={handleChange}
         />
         <CustomInput
-          type="date"
-          id="dateOfStudy"
-          name="Date of Study"
+          type="text"
+          id="mainResponsibilities"
+          name="Main Responsibilities"
+          onChange={handleChange}
+        />
+        <CustomInput
+          type="range"
+          id="workExperienceTimeline"
+          name="Work Experience Timeline"
           onChange={handleChange}
         />
         <CustomButton
           type="submit"
           name="Submit"
-          id="educationExpSubmitButton"
+          id="practicalExpSubmitButton"
           onClick={handleSubmitting}
         />
       </form>
@@ -42,4 +48,4 @@ const EducationalExperience = ({
     </>
   );
 };
-export default EducationalExperience;
+export default PracticalExperience;

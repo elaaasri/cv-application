@@ -20,7 +20,8 @@
 }
 /* general section styles */
 #generalInfosForm,
-#educationalExpForm {
+#educationalExpForm,
+#practicalExpForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
