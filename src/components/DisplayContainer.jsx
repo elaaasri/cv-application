@@ -1,33 +1,21 @@
 // display content :
-const DisplayContainer = ({
-  generalData,
-  educationalExpData,
-  practicalExpData,
-}) => {
-  const { fullName, email, phoneNumber } = generalData;
-  const { schoolName, TitleOfStudy, dateOfStudy } = educationalExpData;
-  const {
-    companyName,
-    positionTitle,
-    mainResponsibilities,
-    workExperienceTimeline,
-  } = practicalExpData;
-
+const DisplayContainer = ({ general = {}, education = {}, practical = {} }) => {
   return (
     <div id="displayContainer">
       <h1>CV</h1>
-      <h2>{fullName}</h2>
-      <h2>{email}</h2>
-      <h2>{phoneNumber}</h2>
+      <h2>{general.fullName}</h2>
+      <h2>{general.fullName}</h2>
+      <h2>{general.email}</h2>
       <hr />
-      <h2>{schoolName}</h2>
-      <h2>{TitleOfStudy}</h2>
-      <h2>{dateOfStudy}</h2>
+      <h2>{education.phoneNumber}</h2>
+      <h2>{education.schoolName}</h2>
+      <h2>{education.TitleOfStudy}</h2>
+      <h2>{education.dateOfStudy}</h2>
       <hr />
-      <h2>{companyName}</h2>
-      <h2>{positionTitle}</h2>
-      <h2>{mainResponsibilities}</h2>
-      <h2>{workExperienceTimeline}</h2>
+      <h2>{practical.companyName}</h2>
+      <h2>{practical.positionTitle}</h2>
+      <h2>{practical.mainResponsibilities}</h2>
+      <h2>{practical.workExperienceTimeline}</h2>
     </div>
   );
 };

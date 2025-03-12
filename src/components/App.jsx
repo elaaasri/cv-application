@@ -6,100 +6,62 @@ import PracticalExperience from "./PracticalExperience";
 
 // app func to manipulate the dom :
 const App = () => {
-  const [formData, setFormData] = useState({});
-  const [generalData, setGeneralData] = useState({});
-  const [educationalExpData, setEducationalExpData] = useState({});
-  const [practicalExpData, setPracticalExpData] = useState({});
-  const [isGeneralFormVisible, setGeneralFormVisiblity] = useState(true);
-  const [isEducationalFormVisible, setEducationalFormVisiblity] =
-    useState(true);
-  const [isPracticalFormVisible, setPracticallFormVisiblity] = useState(true);
+  const [allData, setAllData] = useState({});
+  const [formData, setFormData] = useState({
+    general: {},
+    education: {},
+    practical: {},
+  });
+  const [isFormVisible, setFormVisibility] = useState({
+    general: true,
+    education: true,
+    practical: true,
+  });
 
   // handle change state :
-  const handleChange = (e) => {
+  const handleChange = (section) => (e) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [section]: { ...prev[section], [id]: value },
+    }));
   };
-
   // handle submitting :
-  const handleGeneralInfosSubmitting = (e) => {
+  const handleSubmitting = (section) => (e) => {
     e.preventDefault();
-    setGeneralData(formData);
-    setGeneralFormVisiblity(false);
+    setAllData(formData);
+    setFormVisibility((prev) => ({ ...prev, [section]: false }));
   };
-  const handleEducationExpSubmitting = (e) => {
+  // handle edditing :
+  const handleEditting = (section) => (e) => {
     e.preventDefault();
-    setEducationalExpData(formData);
-    setEducationalFormVisiblity(false);
-  };
-  const handlePracticalExpSubmitting = (e) => {
-    e.preventDefault();
-    setPracticalExpData(formData);
-    setPracticallFormVisiblity(false);
-  };
-
-  // handle editting :
-  const handleGeneralInfoEditting = (e) => {
-    e.preventDefault();
-    setGeneralFormVisiblity(true);
-  };
-  const handleEducationalExpEditting = (e) => {
-    e.preventDefault();
-    setEducationalFormVisiblity(true);
-  };
-  const handlePracticalExpEditting = (e) => {
-    e.preventDefault();
-    setPracticallFormVisiblity(true);
+    setFormVisibility((prev) => ({ ...prev, [section]: true }));
   };
 
   return (
     <>
       <div className="form-container">
         <GeneralInfos
-          handleChange={handleChange}
-          handleSubmitting={handleGeneralInfosSubmitting}
-          handleEditting={handleGeneralInfoEditting}
-          isFormVisible={isGeneralFormVisible}
+          handleChange={handleChange("general")}
+          handleSubmitting={handleSubmitting("general")}
+          handleEditting={handleEditting("general")}
+          isFormVisible={isFormVisible.general}
         />
         <EducationalExperience
-          handleChange={handleChange}
-          handleSubmitting={handleEducationExpSubmitting}
-          handleEditting={handleEducationalExpEditting}
-          isFormVisible={isEducationalFormVisible}
+          handleChange={handleChange("education")}
+          handleSubmitting={handleSubmitting("education")}
+          handleEditting={handleEditting("education")}
+          isFormVisible={isFormVisible.education}
         />
         <PracticalExperience
-          handleChange={handleChange}
-          handleSubmitting={handlePracticalExpSubmitting}
-          handleEditting={handlePracticalExpEditting}
-          isFormVisible={isPracticalFormVisible}
+          handleChange={handleChange("practical")}
+          handleSubmitting={handleSubmitting("practical")}
+          handleEditting={handleEditting("practical")}
+          isFormVisible={isFormVisible.practical}
         />
       </div>
-      <DisplayContainer
-        generalData={generalData}
-        educationalExpData={educationalExpData}
-        practicalExpData={practicalExpData}
-      />
+      <DisplayContainer {...allData} />
     </>
   );
 };
 export default App;
-
-/**
- * hide the form
- * add previous infos as a values
- * able to edit inputs
- * able resubmit the content
- */
-
-// CV app :
-// 1- sections:
-//  ==> general information (name, email, phone num)
-//  ==> educational experience (school name, title of study and date of study)
-//  ==> practical experience (company name, position title, main responsibilities of your jobs, date from and until when you worked for that company)
-
-// 2- each section has an edit and submit button.
-//  ==> submit button :
-//      # should display value of input fields in html elemens.
-//  ==> edit button :
-//      # should display the input fields again (with previously information as values inside).
-//      # able to edit and resumbit the content.
