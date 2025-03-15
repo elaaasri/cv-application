@@ -8,18 +8,31 @@ const GeneralInfos = ({
   isFormVisible,
 }) => {
   return (
-    <>
+    <div className="general-infos-container">
+      <CustomButton
+        name="General Details"
+        id="generalEditButton"
+        editIconSrc="/public/images/personal-icon.png"
+        editIconID="personalIcon"
+        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconID="drop-down-icon"
+        onClick={handleEditting}
+      />
       <form
         id="generalInfosForm"
-        style={{ display: isFormVisible ? "flex" : "none" }}
+        style={{
+          display: isFormVisible ? "flex" : "none",
+        }}
       >
         <CustomInput
+          inputID="fullNameInput"
           type="text"
           id="fullName"
-          name="Name"
+          name="Full Name"
           onChange={handleChange}
         />
         <CustomInput
+          inputID="emailInput"
           type="email"
           id="email"
           name="Email"
@@ -27,6 +40,7 @@ const GeneralInfos = ({
           onChange={handleChange}
         />
         <CustomInput
+          inputID="phoneNumberInput"
           type="number"
           id="phoneNumber"
           name="Phone Number"
@@ -39,8 +53,7 @@ const GeneralInfos = ({
           onClick={handleSubmitting}
         />
       </form>
-      <CustomButton name="Edit" id="editButton" onClick={handleEditting} />
-    </>
+    </div>
   );
 };
 export default GeneralInfos;

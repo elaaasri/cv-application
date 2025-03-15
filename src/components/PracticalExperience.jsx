@@ -8,7 +8,16 @@ const PracticalExperience = ({
   isFormVisible,
 }) => {
   return (
-    <>
+    <div className="practical-exp-container">
+      <CustomButton
+        name="Practical Experience"
+        id="practicalEditButton"
+        editIconSrc="/public/images/practical-exp-icon.png"
+        editIconID="practicalExpIcon"
+        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconID="drop-down-icon"
+        onClick={handleEditting}
+      />
       <form
         id="practicalExpForm"
         style={{ display: isFormVisible ? "flex" : "none" }}
@@ -44,8 +53,7 @@ const PracticalExperience = ({
           onClick={handleSubmitting}
         />
       </form>
-      <CustomButton name="Edit" id="editButton" onClick={handleEditting} />
-    </>
+    </div>
   );
 };
 export default PracticalExperience;

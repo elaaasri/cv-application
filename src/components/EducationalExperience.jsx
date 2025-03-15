@@ -8,9 +8,18 @@ const EducationalExperience = ({
   isFormVisible,
 }) => {
   return (
-    <>
+    <div className="education-exp-container">
+      <CustomButton
+        name="Education Experience"
+        id="educationEditButton"
+        editIconSrc="/public/images/education-icon.png"
+        editIconID="educationIcon"
+        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconID="drop-down-icon"
+        onClick={handleEditting}
+      />
       <form
-        id="educationalExpForm"
+        id="educationExpForm"
         style={{ display: isFormVisible ? "flex" : "none" }}
       >
         <CustomInput
@@ -38,8 +47,7 @@ const EducationalExperience = ({
           onClick={handleSubmitting}
         />
       </form>
-      <CustomButton name="Edit" id="editButton" onClick={handleEditting} />
-    </>
+    </div>
   );
 };
 export default EducationalExperience;
