@@ -8,7 +8,7 @@ const PracticalExperience = ({
   isFormVisible,
 }) => {
   return (
-    <div className="practical-exp-container">
+    <div className="practical-exp-form-container">
       <CustomButton
         name="Practical Experience"
         id="practicalEditButton"
@@ -36,14 +36,26 @@ const PracticalExperience = ({
         />
         <CustomInput
           type="text"
-          id="mainResponsibilities"
-          name="Main Responsibilities"
+          id="mainResponsibility"
+          name="Main Responsibility"
           onChange={handleChange}
         />
         <CustomInput
-          type="range"
-          id="workExperienceTimeline"
-          name="Work Experience Timeline"
+          type="date"
+          id="practicalStartDate"
+          name="Start Date"
+          onChange={handleChange}
+        />
+        <CustomInput
+          type="date"
+          id="practicalEndDate"
+          name="End Date"
+          onChange={handleChange}
+        />
+        <CustomInput
+          type="textarea"
+          id="practicalDesc"
+          name="Description"
           onChange={handleChange}
         />
         <CustomButton

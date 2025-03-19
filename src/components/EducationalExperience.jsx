@@ -8,7 +8,7 @@ const EducationalExperience = ({
   isFormVisible,
 }) => {
   return (
-    <div className="education-exp-container">
+    <div className="education-exp-form-container">
       <CustomButton
         name="Education Experience"
         id="educationEditButton"
@@ -36,8 +36,14 @@ const EducationalExperience = ({
         />
         <CustomInput
           type="date"
-          id="dateOfStudy"
-          name="Date of Study"
+          id="educationStartDate"
+          name="Start Date"
+          onChange={handleChange}
+        />
+        <CustomInput
+          type="date"
+          id="educationEndDate"
+          name="End Date"
           onChange={handleChange}
         />
         <CustomButton

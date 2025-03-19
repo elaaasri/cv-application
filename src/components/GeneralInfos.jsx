@@ -8,7 +8,7 @@ const GeneralInfos = ({
   isFormVisible,
 }) => {
   return (
-    <div className="general-infos-container">
+    <div className="general-infos-form-container">
       <CustomButton
         name="General Details"
         id="generalEditButton"
@@ -44,6 +44,13 @@ const GeneralInfos = ({
           type="number"
           id="phoneNumber"
           name="Phone Number"
+          onChange={handleChange}
+        />
+        <CustomInput
+          inputID="cityAndProvinceInput"
+          type="text"
+          id="cityAndProvince"
+          name="City And Province"
           onChange={handleChange}
         />
         <CustomButton

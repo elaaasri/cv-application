@@ -35,7 +35,10 @@ const AddCV = () => {
   // handle edditing :
   const handleEditting = (section) => (e) => {
     e.preventDefault();
-    setFormVisibility((prev) => ({ ...prev, [section]: true }));
+    setFormVisibility((prev) => ({
+      ...prev,
+      [section]: !prev[section], // toggles form visibility!
+    }));
   };
 
   return (
