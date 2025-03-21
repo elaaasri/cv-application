@@ -12,9 +12,9 @@ const EducationalExperience = ({
       <CustomButton
         name="Education Experience"
         id="educationEditButton"
-        editIconSrc="/public/images/education-icon.png"
+        editIconSrc="/images/education-icon.png"
         editIconID="educationIcon"
-        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconSrc="/images/drop-down-icon.png"
         dropDownIconID="drop-down-icon"
         onClick={handleEditting}
       />

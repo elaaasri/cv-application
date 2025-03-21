@@ -12,9 +12,9 @@ const GeneralInfos = ({
       <CustomButton
         name="General Details"
         id="generalEditButton"
-        editIconSrc="/public/images/personal-icon.png"
+        editIconSrc="/images/personal-icon.png"
         editIconID="personalIcon"
-        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconSrc="/images/drop-down-icon.png"
         dropDownIconID="drop-down-icon"
         onClick={handleEditting}
       />

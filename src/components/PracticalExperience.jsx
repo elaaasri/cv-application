@@ -12,9 +12,9 @@ const PracticalExperience = ({
       <CustomButton
         name="Practical Experience"
         id="practicalEditButton"
-        editIconSrc="/public/images/practical-exp-icon.png"
+        editIconSrc="/images/practical-exp-icon.png"
         editIconID="practicalExpIcon"
-        dropDownIconSrc="/public/images/drop-down-icon.png"
+        dropDownIconSrc="/images/drop-down-icon.png"
         dropDownIconID="drop-down-icon"
         onClick={handleEditting}
       />
